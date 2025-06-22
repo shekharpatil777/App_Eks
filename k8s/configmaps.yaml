@@ -4,7 +4,7 @@ metadata:
   name: my-app-config
   namespace: my-app
 data:
-  DB_HOST: "postgres-service" 
+  DB_HOST: "postgres-service"  # Internal service name for the DB
   DB_PORT: "5432"
   DB_USER: "myuser"
   DB_NAME: "myappdb"
