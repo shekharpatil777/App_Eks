@@ -10,3 +10,68 @@ Connection closure: Either the client or server can initiate closing the connect
 
 ✔️ Final Answer:
 WebSocket handshake, Connection establishment, Data transmission, Connection closure ✅
+
+
+##
+
+You said:
+What is the correct sequence of steps in the WebSocket workflow?
+
+WebSocket handshake, Connection establishment, Data transmission, Connection closure
+
+Data transmission, WebSocket handshake, Connection establishment, Connection closure
+
+Connection establishment, WebSocket handshake, Data transmission, Connection closure
+
+WebSocket handshake, Data transmission, Connection establishment, Connection closure
+
+
+ChatGPT said:
+The correct sequence of steps in the WebSocket workflow is:
+
+✅ WebSocket handshake → Connection establishment → Data transmission → Connection closure
+Breakdown:
+WebSocket handshake: Initiated by the client using an HTTP Upgrade request to switch the protocol to WebSocket.
+
+Connection establishment: If the server accepts the upgrade, a WebSocket connection is established.
+
+Data transmission: Full-duplex communication begins, allowing both client and server to send messages independently.
+
+Connection closure: Either the client or server can initiate closing the connection when communication is done.
+
+✔️ Final Answer:
+WebSocket handshake, Connection establishment, Data transmission, Connection closure ✅
+
+
+
+
+
+
+
+
+You said:
+When using webhooks, what happens during the connection establishment process?
+
+The source system sends a POST request to the webhook URL.
+
+The receiving server initiates the webhook handshake.
+
+The webhook URL is created to store payload data.
+
+The source system generates an authentication token for the webhook.
+
+
+ChatGPT said:
+The correct answer is:
+
+✅ The source system sends a POST request to the webhook URL.
+Explanation:
+When using webhooks, there is no persistent connection like with WebSockets. Instead, the workflow is event-driven:
+
+The source system (e.g., Stripe, GitHub) detects an event.
+
+It sends an HTTP POST request to the webhook URL configured by the receiving system.
+
+This POST request contains the event payload (e.g., JSON data).
+
+There is no traditional connection establishment or handshake step. The interaction is stateless and initiated by the source system.
