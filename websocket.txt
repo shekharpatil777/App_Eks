@@ -1,0 +1,12 @@
+✅ WebSocket handshake → Connection establishment → Data transmission → Connection closure
+Breakdown:
+WebSocket handshake: Initiated by the client using an HTTP Upgrade request to switch the protocol to WebSocket.
+
+Connection establishment: If the server accepts the upgrade, a WebSocket connection is established.
+
+Data transmission: Full-duplex communication begins, allowing both client and server to send messages independently.
+
+Connection closure: Either the client or server can initiate closing the connection when communication is done.
+
+✔️ Final Answer:
+WebSocket handshake, Connection establishment, Data transmission, Connection closure ✅
