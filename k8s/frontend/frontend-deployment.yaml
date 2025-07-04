@@ -19,7 +19,7 @@ spec:
         - name: frontend
           image: your-dockerhub-username/your-frontend-app:latest # Replace with your frontend image (e.g., Nginx, Node.js)
           ports:
-            - containerPort: 80 
+            - containerPort: 80 # Or whatever port your frontend app listens on (e.g., 3000 for React dev server, 80 for Nginx)
           env:
             - name: BACKEND_API_URL
               value: "http://backend-service:8080" # How frontend accesses backend internally
