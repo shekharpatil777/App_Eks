@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: my-app
+  labels:
+    app: frontend
+spec:
+  replicas: 2 # Scale as needed for your frontend
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: your-dockerhub-username/your-frontend-app:latest # Replace with your frontend image (e.g., Nginx, Node.js)
+          ports:
+            - containerPort: 80 
+          env:
+            - name: BACKEND_API_URL
+              value: "http://backend-service:8080" # How frontend accesses backend internally
+            - name: FRONTEND_MESSAGE # Example of using ConfigMap for frontend text
+              valueFrom:
+                configMapKeyRef:
+                  name: my-app-config
+                  key: FRONTEND_MESSAGE
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
