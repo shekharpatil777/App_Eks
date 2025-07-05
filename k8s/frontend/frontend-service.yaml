@@ -12,4 +12,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80 # Container port
-  type: ClusterIP
+  type: ClusterIP   # We'll use Ingress for external access
