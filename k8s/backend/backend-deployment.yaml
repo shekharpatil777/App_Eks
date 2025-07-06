@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: my-app
+  labels:
+    app: backend
+spec:
+  replicas: 2 # Scale as needed for your backend
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: your-dockerhub-username/your-backend-app:latest # Replace with your backend image
+          ports:
+            - containerPort: 8080 # Or whatever port your backend app listens on
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: my-app-config
+                  key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: my-app-config
+                  key: DB_PORT
+            - name: DB_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: my-app-config
+                  key: DB_USER
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: my-app-config
+                  key: DB_NAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: my-app-secrets
+                  key: DB_PASSWORD
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: my-app-secrets
+                  key: API_KEY
+          # resource limits and requests (important for production)
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
