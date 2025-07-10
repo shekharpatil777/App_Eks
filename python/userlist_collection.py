@@ -1,5 +1,6 @@
 from collections import UserList
 
+#Custom list with extended behavior
 class MyList(UserList):
     def append(self, item):
         print(f"Adding {item}")
