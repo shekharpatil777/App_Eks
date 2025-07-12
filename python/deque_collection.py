@@ -1,5 +1,6 @@
 from collections import deque
 
+#A double-ended queue (fast append and pop from both ends).
 dq = deque()
 dq.append('a')
 dq.appendleft('b')
