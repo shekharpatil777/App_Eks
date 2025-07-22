@@ -1,5 +1,6 @@
 import logging
 
+#Custom Logger with Handlers
 logger = logging.getLogger('my_logger')
 logger.setLevel(logging.DEBUG)
 
