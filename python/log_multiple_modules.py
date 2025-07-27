@@ -2,6 +2,7 @@
 import logging
 import module
 
+#Log from Multiple Modules
 logging.basicConfig(level=logging.INFO)
 logging.info("Main logger")
 
