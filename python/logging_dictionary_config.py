@@ -1,6 +1,7 @@
 import logging
 import logging.config
 
+#Logging Dictionary Config
 LOGGING_CONFIG = {
     'version': 1,
     'formatters': {
