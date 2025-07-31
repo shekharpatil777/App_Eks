@@ -6,6 +6,7 @@ def logger(func):
         return result
     return wrapper
 
+#Logging Decorator
 @logger
 def add(a, b):
     return a + b
