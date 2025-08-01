@@ -10,6 +10,7 @@ class MyClassDecorator:
 def multiply(a, b):
     return a * b
 
+#A class can also be used as a decorator. The class must implement the __call__ method
 print(multiply(4, 5))
 # Output:
 # Class decorator is calling 'multiply'
