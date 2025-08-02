@@ -24,5 +24,10 @@ def fibonacci(n):
 
 print(fibonacci(10))
 print(fibonacci(10)) # This call will use the cache
-
+# Output:
+# Calculating result for ((0,), ())
+# ... (intermediate calculations) ...
+# Calculating result for ((1,), ())
+# 55
+# Returning cached result for ((10,), ())
 # 55
