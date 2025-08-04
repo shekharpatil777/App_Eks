@@ -15,6 +15,7 @@ class User:
         self.name = name
         self.permissions = permissions
 
+#This decorator can be used to check if a user has the required permissions to access a function.
 @check_permission("admin")
 def delete_user(user, user_to_delete):
     print(f"User '{user.name}' deleting user '{user_to_delete}'.")
