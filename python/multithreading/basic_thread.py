@@ -6,5 +6,5 @@ def print_numbers():
 
 t = threading.Thread(target=print_numbers)
 t.start()
-t.join() 
+t.join()  # Wait for the thread to finish
 print("Thread completed")
