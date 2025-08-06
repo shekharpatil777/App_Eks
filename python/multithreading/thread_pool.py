@@ -1,5 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor
 
+#ThreadPoolExecutor (Modern Way with concurrent.futures
 def square(n):
     return n * n
 
