@@ -3,6 +3,7 @@ import time
 
 event = threading.Event()
 
+#using threading event
 def wait_for_event():
     print("Waiting for event...")
     event.wait()
