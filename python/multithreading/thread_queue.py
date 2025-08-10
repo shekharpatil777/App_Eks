@@ -4,6 +4,7 @@ import time
 
 q = queue.Queue()
 
+#Using queue.Queue for Thread Communication
 def producer():
     for i in range(5):
         print(f"Producing item {i}")
