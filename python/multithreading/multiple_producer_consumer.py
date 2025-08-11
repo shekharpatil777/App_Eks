@@ -23,6 +23,8 @@ def consumer(id):
 
 # Create producers
 producers = [threading.Thread(target=producer, args=(i,)) for i in range(2)]
+# Create consumers
+consumers = [threading.Thread(target=consumer, args=(i,)) for i in range(2)]
 
 for t in producers + consumers:
     t.start()
