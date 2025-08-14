@@ -6,4 +6,5 @@ logging.basicConfig(
 )
 
 logging.debug("Debugging details")
-
+logging.info("Application started")
+logging.error("Something went wrong!")
