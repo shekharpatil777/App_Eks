@@ -4,3 +4,4 @@ class Dog:
         self.breed = breed
 
 my_dog = Dog("Buddy", "Golden Retriever")
+print(my_dog.name) # Output: Buddy
