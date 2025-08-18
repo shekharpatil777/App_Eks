@@ -155,3 +155,26 @@ llist.insertAtIndex('g', 2)
 print("Node Data:")
 llist.printLL()
 
+
+# remove nodes from the linked list
+print("\nRemove First Node:")
+llist.remove_first_node()
+llist.printLL()
+
+print("\nRemove Last Node:")
+llist.remove_last_node()
+llist.printLL()
+
+print("\nRemove Node at Index 1:")
+llist.remove_at_index(1)
+llist.printLL()
+
+# print the linked list after all removals
+print("\nLinked list after removing a node:")
+llist.printLL()
+
+print("\nUpdate node Value at Index 0:")
+llist.updateNode('z', 0)
+llist.printLL()
+
+print("\nSize of linked list:", llist.sizeOfLL())
