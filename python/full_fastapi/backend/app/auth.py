@@ -64,3 +64,11 @@ async def get_current_admin_user(current_user: User = Depends(get_current_user))
             detail="Not enough permissions",
         )
     return current_user
+
+def authenticate_user(db: Session, username: str, password: str):
+    user = get_user(db, username)
+    if not user:
+        return False
+    if not verify_password(password, user.hashed_password):
+        return False
+    return user
