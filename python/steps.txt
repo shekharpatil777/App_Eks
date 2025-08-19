@@ -1,0 +1,101 @@
+[ec2-user@ip-172-31-90-93 App_Eks]$ history
+    1  docker run hello-world
+    2  docker compose version
+    3  docker run hello-world
+    4  which docker
+    5  rpm -qa | grep docker
+    6   which docker
+    7  # Update packages
+    8  sudo yum update -y
+    9  # Install Docker
+   10  sudo amazon-linux-extras install docker -y
+   11  # Start Docker service
+   12  sudo systemctl start docker
+   13  sudo systemctl enable docker
+   14  # Allow ec2-user to run docker without sudo
+   15  sudo usermod -aG docker ec2-user
+   16  # Install Docker Compose v2 plugin
+   17  sudo mkdir -p /usr/local/lib/docker/cli-plugins/
+   18  sudo curl -SL https://github.com/docker/compose/releases/download/v2.24.7/docker-compose-linux-x86_64   -o /usr/local/lib/docker/cli-plugins/docker-compose
+   19  sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+   20  # Verify
+   21  docker --version       # should show Docker version
+   22  docker compose version # should show Docker Compose version
+   23  sudo amazon-linux-extras install docker -y
+   24  sudo yum update -y
+   25  # Install Docker Engine
+   26  sudo yum install docker -y
+   27  # Start and enable service
+   28  sudo systemctl start docker
+   29  sudo systemctl enable docker
+   30  # Add ec2-user to docker group to run docker without sudo
+   31  sudo usermod -aG docker ec2-user
+   32  exit
+   33  docker ps
+   34*
+   35  cd App_Eks/
+   36  ls
+   37  cd python/full_fastapi/
+   38  ls
+   39  vi docker-compose.yml
+   40  docker compose down
+   41  docker compose up --build -d
+   42  docker ps
+   43  docker compose restart backend
+   44  docker ps
+   45  docker compose logs frontend
+   46  vi docker-compose.yml
+   47  docker compose down
+   48  docker compose up --build -d
+   49  docker compose restart backend
+   50  cd frontend
+   51  ls
+   52  cd src/
+   53  vi App.js
+   54  cd
+   55  cd App_Eks/
+   56  docker compose down
+   57  cd python/full_fastapi/
+   58  docker compose down
+   59  docker compose up --build -d
+   60  docker compose restart backend
+   61  vi docker-compose.yml
+   62  docker compose down
+   63  docker compose up --build -d
+   64  docker compose restart backend
+   65  docker system prune --all --volumes -f
+   66  docker compose up --build -d
+   67  docker compose restart backend
+   68  vi docker-compose.yml
+   69  docker compose down
+   70  docker compose up --build -d
+   71  docker compose restart backend
+   72  git status
+   73  git add .
+   74  git status
+   75  git commit -m "code modified"
+   76  git push origin main
+   77  git push https://shekharpatil777:ghp_f7@github.com/shekharpatil777/App_Eks.git
+   78  cd ..
+   79  git push https://shekharpatil777:ghp_S1pWIxf7@github.com/shekharpatil777/App_Eks.git
+   80  git pull origin
+   81  git push https://shekharpatil777:ghp_S1pIxf7@github.com/shekharpatil777/App_Eks.git
+   82  git push origin main
+   83  git config --global credential.helper store
+   84  git push https://github.com/shekharpatil777/App_Eks.git
+   85  cat ~/.git-credentials
+   86  git push
+   87  git pull origin main      # merge latest commits from GitHub into your local branch
+   88  # (resolve any merge conflicts if asked)
+   89  git push origin main      # now push your local updates
+   90  git push -f origin main
+   91  history
+   92  history > steps.txt
+   93  ls
+   94  git add .
+   95  git commit
+   96  git push
+   97  git commit -m "txt file"
+   98  git push
+   99  git push -f origin main
+  100  history
