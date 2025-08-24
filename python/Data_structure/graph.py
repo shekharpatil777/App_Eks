@@ -7,6 +7,7 @@ graph = {
     4: []
 }
 
+#Adjacency List + BFS
 def bfs(start):
     visited = set()
     q = deque([start])
