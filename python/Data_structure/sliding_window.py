@@ -14,3 +14,5 @@ def max_sum_subarray(arr, k):
     
     return max_sum
 
+
+print(max_sum_subarray([2, 1, 5, 1, 3, 2], 3))  # Output: 9 (5+1+3)
