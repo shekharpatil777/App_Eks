@@ -11,4 +11,6 @@ def inorder(root):
 
 root = TreeNode(1)
 root.left = TreeNode(2)
+root.right = TreeNode(3)
 
+inorder(root)  # 2 1 3
