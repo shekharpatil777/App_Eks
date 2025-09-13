@@ -5,4 +5,6 @@ class Item(BaseModel):
     price: float
     in_stock: bool = True
 
-
+@app.post("/items/")
+def create_item(item: Item):
+    return {"created_item": item}
