@@ -3,7 +3,7 @@ from routers import items # Assuming routers is a package and items.py is a modu
 
 app = FastAPI()
 
-
+app.include_router(items.router)
 
 @app.get("/")
 async def read_root():
