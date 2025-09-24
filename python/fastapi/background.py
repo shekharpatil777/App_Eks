@@ -20,4 +20,10 @@ async def send_notification(email: str, background_tasks: BackgroundTasks):
     The response is returned immediately.
     The 'write_notification' function runs in the background.
     """
-    
+  
+
+
+
+
+background_tasks.add_task(write_notification, email, message="some notification")
+    return {"message": "Notification sending in the background"}  
