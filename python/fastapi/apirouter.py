@@ -11,3 +11,6 @@ router = APIRouter(
 async def read_items():
     return [{"name": "Item Foo"}, {"name": "Item Bar"}]
 
+@router.get("/{item_id}")
+async def read_item(item_id: str):
+    return {"name": "Fake Specific Item", "item_id": item_id}
