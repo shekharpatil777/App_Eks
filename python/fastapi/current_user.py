@@ -55,3 +55,5 @@ async def read_items(
     one for the current user. FastAPI handles the dependency graph.
     """
     # You can now use `db` to query your 
+database and `current_user`
+    return {"user": current_user, "items": [{"id": 1, "name": "Item A"}]}
