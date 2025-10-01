@@ -4,6 +4,7 @@ from fastapi import FastAPI, Path, Query
 app = FastAPI()
 
 
+@app.get("/items/{item_id}")
 async def read_items(
     # Path parameter with a title, description, and minimum value of 1.
     item_id: Annotated[int, Path(title="The ID of the item to get", ge=1)],
