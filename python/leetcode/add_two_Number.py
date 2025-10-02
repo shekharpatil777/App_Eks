@@ -12,6 +12,12 @@ class Solution:
             carry = total_sum // 10
             new_digit = total_sum % 10
             
-
+            current.next = ListNode(new_digit)
+            current = current.next
+            
+            if l1:
+                l1 = l1.next
+            if l2:
+                l2 = l2.next
                 
         return dummy_head.next
