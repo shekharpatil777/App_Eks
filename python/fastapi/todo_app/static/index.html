@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FastAPI To-Do App</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input, button, textarea { padding: 8px; margin: 4px; }
+        ul { list-style-type: none; padding: 0; max-width: 500px; }
+        li { padding: 8px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; margin-bottom: 6px; }
+        .actions { display: flex; gap: 6px; }
+        .completed { text-decoration: line-through; color: gray; }
+        textarea { resize: none; width: 100%; height: 40px; }
+    </style>
+</head>
+<body>
+    <h2>📝 FastAPI To-Do List</h2>
+    <input id="title" type="text" placeholder="Enter task title">
+    <textarea id="description" placeholder="Enter description (optional)"></textarea>
+    <button onclick="addTodo()">Add Task</button>
+
+    <ul id="todoList"></ul>
+
+    <script>
+        const API_URL = "http://127.0.0.1:8000/todos/";
+
+        async function loadTodos() {
+            const res = await fetch(API_URL);
+            const todos = await res.json();
+            const list = document.getElementById("todoList");
+            list.innerHTML = "";
+            todos.forEach(todo => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <input type="text" id="title-${todo.id}" value="${todo.title}" class="${todo.completed ? 'completed' : ''}" />
+                    <textarea id="desc-${todo.id}" placeholder="Description...">${todo.description || ''}</textarea>
+                    <div class="actions">
+                        <button onclick="toggleComplete(${todo.id}, ${!todo.completed})">${todo.completed ? 'Undo' : '✔ Done'}</button>
+                        <button onclick="updateTodo(${todo.id})">💾 Save</button>
+                        <button onclick="deleteTodo(${todo.id})">🗑 Delete</button>
+                    </div>
+                `;
+                list.appendChild(li);
+            });
+        }
+
+        async function addTodo() {
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            if (!title) return alert("Please enter a title!");
+            await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ title, description, completed: false })
+            });
+            document.getElementById("title").value = "";
+            document.getElementById("description").value = "";
+            loadTodos();
+        }
+
+        async function updateTodo(id) {
+            const title = document.getElementById(`title-${id}`).value;
+            const description = document.getElementById(`desc-${id}`).value;
+            const res = await fetch(API_URL + id, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ title, description, completed: false })
+            });
+            if (res.ok) loadTodos();
+            else alert("Failed to update task");
+        }
+
+
+
+        async function deleteTodo(id) {
+            await fetch(API_URL + id, { method: "DELETE" });
+            loadTodos();
+        }
+
+        loadTodos();
+    </script>
+</body>
+</html>
