@@ -70,7 +70,16 @@
             else alert("Failed to update task");
         }
 
-
+        async function toggleComplete(id, completed) {
+            const title = document.getElementById(`title-${id}`).value;
+            const description = document.getElementById(`desc-${id}`).value;
+            await fetch(API_URL + id, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ title, description, completed })
+            });
+            loadTodos();
+        }
 
         async function deleteTodo(id) {
             await fetch(API_URL + id, { method: "DELETE" });
