@@ -54,3 +54,6 @@ class Solution:
                 low = partitionX + 1
         
         # This line should not be reached 
+
+if inputs are sorted arrays.
+        raise ValueError("Input arrays are not sorted.")
