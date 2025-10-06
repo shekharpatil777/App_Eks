@@ -34,3 +34,8 @@ class Solution:
         
         return s[start : start + max_len]
 
+
+# Example Usage:
+solver = Solution()
+print(f"Input: 'babad', Output: '{solver.longestPalindrome('babad')}'") # Expected: 'bab' or 'aba'
+print(f"Input: 'cbbd', Output: '{solver.longestPalindrome('cbbd')}'")   # Expected: 'bb'
