@@ -40,3 +40,7 @@ print(f"Input: 'PAYPALISHIRING', 3 -> Output: '{solver.convert('PAYPALISHIRING',
 
 print(f"Input: 'PAYPALISHIRING', 4 -> Output: '{solver.convert('PAYPALISHIRING', 4)}'")
 # Expected: 'PINALSIGYAHRPI'
+
+
+print(f"Input: 'A', 1 -> Output: '{solver.convert('A', 1)}'")
+# Expected: 'A'
