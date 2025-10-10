@@ -28,3 +28,13 @@ class Solution:
             reversed_num = reversed_num * 10 + digit
             
         return sign * reversed_num
+
+
+#Time Complexity: O(log 
+10
+
+ (x))
+The number of iterations is equal to the number of digits in x, which is approximately log 
+10
+
+ (x).
