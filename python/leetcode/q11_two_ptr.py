@@ -1,3 +1,5 @@
+#Find two lines that together with the x-axis form a container that holds the most water.
+Return the maximum area of water the container can store.
 class Solution:
     def maxArea(self, height: list[int]) -> int:
         left, right = 0, len(height) - 1
