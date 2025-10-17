@@ -17,6 +17,8 @@ class Solution:
             
             # Use divmod for efficiency: count is how many times, num is the remainder
             count, num = divmod(num, value)
-
+            
+            # Append the symbol 'count' times to the result
+            result += symbol * count
             
         return result
