@@ -26,6 +26,7 @@ class Solution:
             else:
                 total += current_value
                 
-
+            # 5. Update the previous value for the next iteration
+            prev_value = current_value
             
         return total
