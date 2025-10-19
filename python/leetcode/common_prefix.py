@@ -19,6 +19,8 @@ class Solution:
                 # Shorten the prefix by removing the last character
                 prefix = prefix[:-1]
                 
-
+                # If the prefix becomes empty, there is no common prefix
+                if not prefix:
+                    return ""
                     
         return prefix
