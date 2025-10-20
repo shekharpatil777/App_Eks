@@ -42,6 +42,7 @@ class Solution:
                     # as 'r' will also be checked on the next outer loop iteration, 
                     # but it is good practice here to fully clear all duplicate pairs for 'a'
 
+                    # while l < r and nums[r] == nums[r + 1]: # Note: this logic is often simplified by just moving r-- above
                     #     r -= 1
                         
         return res
