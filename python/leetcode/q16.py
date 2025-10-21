@@ -32,6 +32,7 @@ class Solution:
                     # Sum is too small, need a larger sum, so move the left pointer to the right
                     left += 1
                 else: # current_sum > target
-
+                    # Sum is too large, need a smaller sum, so move the right pointer to the left
+                    right -= 1
                     
         return closest_sum
