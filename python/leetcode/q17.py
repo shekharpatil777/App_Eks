@@ -16,7 +16,14 @@ class Solution:
 
         res = []
 
-
+        def backtrack(index, path):
+            if index == len(digits):
+                res.append("".join(path))
+                return
+            for ch in digit_to_chars[digits[index]]:
+                path.append(ch)
+                backtrack(index + 1, path)
+                path.pop()
 
         backtrack(0, [])
         return res
