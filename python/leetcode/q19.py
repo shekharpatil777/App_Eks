@@ -12,7 +12,10 @@ def removeNthFromEnd(head: ListNode, n: int) -> ListNode:
     for _ in range(n + 1):
         fast = fast.next
 
-
+    # Move both until fast reaches the end
+    while fast:
+        fast = fast.next
+        slow = slow.next
 
     # Delete the n-th node from end
     slow.next = slow.next.next if slow.next else None
