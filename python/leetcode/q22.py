@@ -12,7 +12,9 @@ class Solution:
             if left < n:
                 backtrack(s + "(", left + 1, right)
 
-
+            # Can add ')' only if there are unmatched '('
+            if right < left:
+                backtrack(s + ")", left, right + 1)
 
         backtrack()
         return res
