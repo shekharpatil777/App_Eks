@@ -28,5 +28,12 @@ class Solution:
             #    pointing to 'first'.
             second.next = first
             
- 
+           # 3. 'prev' (the node before the pair) points to 'second'
+            #    (the new start of the pair).
+            prev.next = second
+            
+            # Move 'prev' to 'first' (the new end of the swapped pair)
+            # to prepare for the next iteration.
+            prev = first
+             
         return dummy.next
