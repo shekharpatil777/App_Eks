@@ -46,7 +46,12 @@ class Solution:
             
             # Connect the previous part to the new head
             pre.next = new_head
+
+           # Connect the tail of the reversed group (which is 'start') to the rest of the list
+            start.next = next_group_head
             
+            # 4. Advance 'pre' to the current tail of the reversed group ('start') for the next iteration
+            pre = start            
  
 
         return dummy.next
