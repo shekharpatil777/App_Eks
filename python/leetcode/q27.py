@@ -1,6 +1,7 @@
 class Solution:
     def removeElement(self, nums: list[int], val: int) -> int:
-
+        # slow points to next position to place a value != val
+        slow = 0
         for fast in range(len(nums)):
             if nums[fast] != val:
                 nums[slow] = nums[fast]
