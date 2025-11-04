@@ -25,7 +25,13 @@ class Solution:
             shift = 0
             while dvd >= (dvs << (shift + 1)):
                 shift += 1
+
+            # Subtract this largest multiple from the dividend
+            dvd -= (dvs << shift)
             
+            # Add the corresponding power of 2 (2^shift) to the quotient
+            quotient += (1 << shift)
+                        
 
         # 5. Apply the correct sign
         return -quotient if negative else quotient
