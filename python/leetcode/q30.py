@@ -27,6 +27,17 @@ class Solution:
                     current_count[w] = current_count.get(w, 0) + 1
                     count += 1
 
+                    while current_count[w] > word_count[w]:
+                        left_word = s[left:left + word_len]
+                        current_count[left_word] -= 1
+                        left += word_len
+                        count -= 1
 
+                    if count == num_words:
+                        res.append(left)
+                else:
+                    current_count.clear()
+                    count = 0
+                    left = right
 
         return res
