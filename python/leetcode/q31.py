@@ -20,7 +20,13 @@ class Solution:
             # Swap nums[i] and nums[j]
             nums[i], nums[j] = nums[j], nums[i]
             
-
+        # 3. Reverse the subarray to the right of i (i+1 to end)
+        # This arranges the remaining part in ascending order for the smallest next permutation.
+        left, right = i + 1, n - 1
+        while left < right:
+            nums[left], nums[right] = nums[right], nums[left]
+            left += 1
+            right -= 1
 
 # Example usage (as the function modifies in-place, it returns None):
 # nums = [1, 2, 3]
