@@ -14,7 +14,18 @@ class Solution:
                 # Pop the top element (index of the matching '(' or the base index)
                 stack.pop()
 
-
+                if not stack:
+                    # If the stack is empty after popping, it means the current ')' 
+                    # is unmatched. Push its index to be the new base.
+                    stack.append(i)
+                else:
+                    # If the stack is not empty, a valid pair is formed.
+                    # The length of the current valid substring is (current index) - (new top index).
+                    # The new top index represents the index right before the current valid substring.
+                    current_length = i - stack[-1]
+                    max_length = max(max_length, current_length)
+        
+        return max_length
 
 # Example Usage:
 # sol = Solution()
