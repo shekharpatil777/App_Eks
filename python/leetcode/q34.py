@@ -9,6 +9,8 @@ class Solution:
         # Check if the target was actually found
         if first_occurrence_index == len(nums) or nums[first_occurrence_index] != target:
             return [-1, -1]
+        last_occurrence_index = bisect_right(nums, target) - 1
         
+        return [first_occurrence_index, last_occurrence_index]        
         # Find the index of the first element > target, then subtract 1
         # bisect_right returns the insertion point AFTER all target occurrences
