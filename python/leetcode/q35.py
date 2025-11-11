@@ -30,3 +30,6 @@ class Solution:
                 right = mid
         
  
+       # When the loop terminates (left >= right), 'left' holds the correct 
+        # index for insertion (or the index of the found element).
+        return left
