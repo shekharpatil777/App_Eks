@@ -34,3 +34,5 @@ class Solution:
                 cols[c].add(char)
                 squares[(r // 3, c // 3)].add(char)
 
+        # If the entire board is processed without conflicts, it is valid
+        return True
