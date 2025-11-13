@@ -1,5 +1,10 @@
 class Solution:
-
+    def solveSudoku(self, board):
+        def is_valid(r, c, ch):
+            # Check row and column
+            for i in range(9):
+                if board[r][i] == ch or board[i][c] == ch:
+                    return False
 
             # Check 3x3 sub-box
             start_r, start_c = 3 * (r // 3), 3 * (c // 3)
