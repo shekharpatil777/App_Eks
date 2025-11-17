@@ -17,4 +17,7 @@ class Solution:
                 if candidates[i] > remaining:
                     break
 
+                backtrack(i + 1, path + [candidates[i]], remaining - candidates[i])
 
+        backtrack(0, [], target)
+        return res
