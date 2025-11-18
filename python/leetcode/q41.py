@@ -16,4 +16,11 @@ class Solution:
                 if candidates[i] == prev:
                     continue
 
+                path.append(candidates[i])
+                backtrack(i + 1, path, remaining - candidates[i])
+                path.pop()
 
+                prev = candidates[i]
+
+        backtrack(0, [], target)
+        return res
