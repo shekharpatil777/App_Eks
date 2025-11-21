@@ -15,4 +15,6 @@ class Solution:
                 result[i + j] += sum_ // 10
 
   
-
+        # Convert result array to string and remove leading zeros
+        res = ''.join(map(str, result)).lstrip('0')
+        return res if res else "0"
