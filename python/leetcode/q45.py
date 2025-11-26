@@ -23,3 +23,8 @@ class Solution:
                 jumps += 1
                 current_jump_end = farthest_reachable
                 
+                # OPTIONAL: Early exit if we can already reach the end
+                # if current_jump_end >= n - 1:
+                #     break
+        
+        return jumps
