@@ -22,3 +22,6 @@ class Solution:
                     # 3. Unchoose (Backtrack): Remove the number to explore other branches
                     current_permutation.pop()
 
+      # Start the backtracking process with an empty list
+        backtrack([])
+        return results
