@@ -17,3 +17,13 @@ class Solution:
                     continue
 
 
+                used[i] = True
+                path.append(nums[i])
+
+                backtrack(path)
+
+                path.pop()
+                used[i] = False
+
+        backtrack([])
+        return res
