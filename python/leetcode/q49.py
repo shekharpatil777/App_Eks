@@ -13,3 +13,6 @@ class Solution:
             
             # 2. Use the sorted string as the key and append the original string 's'
             anagram_groups[key].append(s)
+            
+        # 3. Return all the values (the lists of anagrams) from the hash map.
+        return list(anagram_groups.values())
