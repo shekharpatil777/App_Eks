@@ -23,3 +23,7 @@ class Solution:
             
         return ans
 
+# Example Usage:
+# sol = Solution()
+# print(sol.myPow(2.0, 10))  # Output: 1024.0
+# print(sol.myPow(2.0, -2)) # Output: 0.25
