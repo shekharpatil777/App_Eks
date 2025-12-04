@@ -41,3 +41,6 @@ class Solution:
         return solutions
 
  
+# Example usage for n=4:
+# sol = Solution()
+# print(sol.solveNQueens(4))
