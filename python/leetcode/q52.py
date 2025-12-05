@@ -39,4 +39,8 @@ class Solution:
                 pos_diag.remove(r + c)
                 neg_diag.remove(r - c)
                 
- 
+                # Reset the board string for the current row to empty
+                board[r] = "." * n
+
+        backtrack(0)
+        return res
