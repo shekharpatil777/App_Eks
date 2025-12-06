@@ -35,3 +35,7 @@ class Solution:
                 # Recurse to the next row
                 self.dfs(row + 1, n)
 
+                # Backtrack (Unmark attack zones)
+                self.cols[col] = False
+                self.diag1[diag1_idx] = False
+                self.diag2[diag2_idx] = False
