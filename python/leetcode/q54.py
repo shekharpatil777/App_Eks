@@ -36,3 +36,11 @@ class Solution:
                     result.append(matrix[bottom][j])
                 bottom -= 1 # Shrink the bottom boundary inward
             
+            # 4. Traverse Up (Left column)
+            # Need to re-check the boundary condition
+            if left <= right:
+                for i in range(bottom, top - 1, -1):
+                    result.append(matrix[i][left])
+                left += 1 # Shrink the left boundary inward
+                
+        return result
