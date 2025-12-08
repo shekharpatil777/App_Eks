@@ -17,3 +17,7 @@ class Solution:
                 # If we can reach the current goal, this position 'i' becomes the new, 
                 # closer goal we need to reach.
                 goal = i
+
+                
+        # If the goal has been successfully moved back to index 0, we can reach the end.
+        return goal == 0
