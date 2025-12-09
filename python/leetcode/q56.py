@@ -17,3 +17,11 @@ class Solution:
             if not merged or merged[-1][1] < interval[0]:
                 merged.append(interval)
             
+            # Case 2: There is an overlap, so merge by updating the end time 
+            # of the last merged interval.
+            # The new end time is the maximum of the current end time and 
+            # the new interval's end time.
+            else:
+                merged[-1][1] = max(merged[-1][1], interval[1])
+                
+        return merged
