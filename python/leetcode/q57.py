@@ -20,3 +20,9 @@ class Solution:
         # Add the merged newInterval to the result list
         ans.append(newInterval)
 
+        # 3. Add all non-overlapping intervals that start after the merged interval ends
+        while i < n:
+            ans.append(intervals[i])
+            i += 1
+
+        return ans
