@@ -1,0 +1,10 @@
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        length = 0
+        i = len(s) - 1
+
+        # 1. Skip trailing spaces
+        while i >= 0 and s[i] == ' ':
+            i -= 1
+
+        # At this point, i is at the last character of the last word (or -1 if all spaces)
