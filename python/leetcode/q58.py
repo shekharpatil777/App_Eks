@@ -8,3 +8,10 @@ class Solution:
             i -= 1
 
         # At this point, i is at the last character of the last word (or -1 if all spaces)
+        
+        # 2. Count characters of the last word
+        while i >= 0 and s[i] != ' ':
+            length += 1
+            i -= 1
+            
+        return length
