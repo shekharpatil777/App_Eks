@@ -28,4 +28,12 @@ class Solution:
                     num += 1
                 bottom -= 1
             
-   
+            # Check for boundary cross
+            if left <= right:
+                # 4. Traverse Up (Left Column)
+                for i in range(bottom, top - 1, -1):
+                    ans[i][left] = num
+                    num += 1
+                left += 1
+                
+        return ans   
