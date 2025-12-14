@@ -32,7 +32,11 @@ class Solution:
                 bottom -= 1
             
             # 4. Traverse Up (Left Column) - Only if boundaries haven't crossed
-
+            if left <= right:
+                for i in range(bottom, top - 1, -1):
+                    matrix[i][left] = num
+                    num += 1
+                left += 1
                 
         return matrix
 
