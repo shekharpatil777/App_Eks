@@ -37,4 +37,13 @@ class Solution:
         for _ in range(steps_to_new_tail):
             new_tail = new_tail.next
 
- 
+
+
+       # 5. Perform the rotation
+        # The new head is the node *after* the new tail
+        new_head = new_tail.next
+        
+        # Break the circle at the new tail
+        new_tail.next = None
+
+        return new_head 
