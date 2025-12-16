@@ -14,3 +14,7 @@ class Solution:
                 # The number of paths to (i, j) is the sum of paths from the 
                 # cell above (i-1, j) and the cell to the left (i, j-1).
                 dp[i][j] = dp[i-1][j] + dp[i][j-1]
+
+
+        # The result is the value at the bottom-right corner (m-1, n-1)
+        return dp[m-1][n-1]
