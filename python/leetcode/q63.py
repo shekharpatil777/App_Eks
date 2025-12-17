@@ -17,3 +17,9 @@ class Solution:
                     # If there's an obstacle, no paths can pass through here
                     dp[c] = 0
                 elif c > 0:
+
+                    # Current paths = paths from top (already in dp[c]) 
+                    # + paths from left (dp[c-1])
+                    dp[c] += dp[c-1]
+                    
+        return dp[cols - 1]
