@@ -9,3 +9,8 @@ class Solution:
             
             # If the digit is 9, it becomes 0 and we carry over
             digits[i] = 0
+
+            
+        # If we reach here, it means all digits were 9 (like [9, 9])
+        # We need to add a 1 at the start (to get [1, 0, 0])
+        return [1] + digits
