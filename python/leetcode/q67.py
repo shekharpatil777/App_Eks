@@ -17,4 +17,7 @@ class Solution:
             res.append(str(char))
             i -= 1
             j -= 1
-        
+
+
+        # Reverse the list and join to form the final string
+        return "".join(res[::-1])        
