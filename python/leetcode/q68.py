@@ -18,3 +18,8 @@ class Solution:
             cur.append(w)
             num_of_letters += len(w)
             
+        # Handle the last line: left-justified, single space between words
+        last_line = " ".join(cur)
+        res.append(last_line + ' ' * (maxWidth - len(last_line)))
+        
+        return res
