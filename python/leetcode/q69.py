@@ -10,3 +10,11 @@ class Solution:
         while left <= right:
             mid = left + (right - left) // 2
             
+            # Avoid potential overflow by comparing mid with x // mid
+            if mid <= x // mid:
+                ans = mid      # mid could be the answer
+                left = mid + 1 # Try to find a larger value
+            else:
+                right = mid - 1 # mid is too large
+                
+        return ans
