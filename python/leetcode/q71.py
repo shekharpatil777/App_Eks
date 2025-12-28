@@ -16,3 +16,6 @@ class Solution:
                 # It's a valid directory name
                 stack.append(part)
 
+
+        # Join the stack elements with '/' and add the leading '/'
+        return "/" + "/".join(stack)
