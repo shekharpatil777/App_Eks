@@ -12,3 +12,16 @@ class Solution:
             dp[0][j] = j  # insert all characters
 
 
+        # Fill DP table
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if word1[i - 1] == word2[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1]
+                else:
+                    dp[i][j] = 1 + min(
+                        dp[i - 1][j],     # delete
+                        dp[i][j - 1],     # insert
+                        dp[i - 1][j - 1]  # replace
+                    )
+
+        return dp[m][n]
