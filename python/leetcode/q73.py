@@ -30,3 +30,13 @@ class Solution:
                 if matrix[i][0] == 0 or matrix[0][j] == 0:
                     matrix[i][j] = 0
 
+
+        # 5. Handle the first row
+        if first_row_has_zero:
+            for j in range(cols):
+                matrix[0][j] = 0
+
+        # 6. Handle the first column
+        if first_col_has_zero:
+            for i in range(rows):
+                matrix[i][0] = 0
