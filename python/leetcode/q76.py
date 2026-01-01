@@ -47,3 +47,9 @@ class Solution:
 
                 # Move the left pointer ahead, this helps in lookig for a new window.
                 l += 1    
+
+
+            # Keep expanding the window once we've done shrinking.
+            r += 1    
+            
+        return "" if ans[0] == float("inf") else s[ans[1] : ans[2] + 1]
