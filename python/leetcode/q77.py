@@ -18,3 +18,8 @@ class Solution:
                 # 2. Explore further by moving to the next number
                 backtrack(i + 1, current_path)
                 
+                # 3. Backtrack (remove the number) to try the next possibility
+                current_path.pop()
+        
+        backtrack(1, [])
+        return result
