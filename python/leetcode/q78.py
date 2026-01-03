@@ -13,3 +13,9 @@ class Solution:
             subset.append(nums[i])
             dfs(i + 1)
             
+            # Decision NOT to include nums[i] (Backtrack)
+            subset.pop()
+            dfs(i + 1)
+
+        dfs(0)
+        return res
