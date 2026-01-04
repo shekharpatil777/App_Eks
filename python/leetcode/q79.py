@@ -28,4 +28,10 @@ class Solution:
             path.remove((r, c))
             return res
 
- 
+       # Kick off the search from every cell in the grid
+        for r in range(ROWS):
+            for c in range(COLS):
+                if dfs(r, c, 0):
+                    return True
+        
+        return False 
