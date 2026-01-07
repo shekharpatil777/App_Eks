@@ -24,3 +24,10 @@ class Solution:
                     low = mid + 1
             # Right half is sorted
 
+            else:
+                if nums[mid] < target <= nums[high]:
+                    low = mid + 1
+                else:
+                    high = mid - 1
+                    
+        return False
