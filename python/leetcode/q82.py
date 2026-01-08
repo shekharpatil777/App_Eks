@@ -16,4 +16,11 @@ class Solution:
             if curr.next and curr.val == curr.next.val:
                 dup_val = curr.val
                 # Skip all nodes with dup_val
+                while curr and curr.val == dup_val:
+                    curr = curr.next
+                prev.next = curr
+            else:
+                prev = curr
+                curr = curr.next
 
+        return dummy.next
