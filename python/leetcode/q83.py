@@ -12,3 +12,10 @@ class Solution:
         # Traverse until the end of the list
         while current and current.next:
             if current.val == current.next.val:
+                # Duplicate found: skip the next node
+                current.next = current.next.next
+            else:
+                # No duplicate: move to the next node
+                current = current.next
+                
+        return head
