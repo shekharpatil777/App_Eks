@@ -12,3 +12,11 @@ class Solution:
             # While the current height is shorter than the top of the stack
             while stack and stack[-1][1] >= h:
                 index, height = stack.pop()
+                # Calculate area with the popped height as the shortest bar
+                max_area = max(max_area, height * (i - index))
+                # The 'start' for the current bar moves back to the popped index
+                start = index
+            
+            stack.append((start, h))
+            
+        return max_area
