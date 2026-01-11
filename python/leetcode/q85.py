@@ -1,0 +1,14 @@
+class Solution:
+    def maximalRectangle(self, matrix: list[list[str]]) -> int:
+        if not matrix or not matrix[0]:
+            return 0
+        
+        n = len(matrix[0])
+        heights = [0] * (n + 1) # Extra 0 at the end to flush the stack
+        max_area = 0
+        
+        for row in matrix:
+            for i in range(n):
+                # If current cell is '1', add to height, else reset to 0
+                heights[i] = heights[i] + 1 if row[i] == '1' else 0
+            
