@@ -11,4 +11,14 @@ class Solution:
             for i in range(n):
                 # If current cell is '1', add to height, else reset to 0
                 heights[i] = heights[i] + 1 if row[i] == '1' else 0
-            
+
+            # Calculate Largest Rectangle in Histogram for the current row
+            stack = [-1]
+            for i in range(n + 1):
+                while heights[i] < heights[stack[-1]]:
+                    h = heights[stack.pop()]
+                    w = i - stack[-1] - 1
+                    max_area = max(max_area, h * w)
+                stack.append(i)
+                
+        return max_area            
