@@ -14,3 +14,23 @@ class Solution:
         before = before_head
         after = after_head
         
+        curr = head
+        while curr:
+            if curr.val < x:
+                # Add to the "before" list
+                before.next = curr
+                before = before.next
+            else:
+                # Add to the "after" list
+                after.next = curr
+                after = after.next
+            
+            curr = curr.next
+        
+        # Important: Terminate the "after" list to prevent cycles
+        after.next = None
+        
+        # Connect the end of "before" to the start of "after"
+        before.next = after_head.next
+        
+        return before_head.next
