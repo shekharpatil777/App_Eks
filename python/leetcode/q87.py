@@ -22,3 +22,11 @@ class Solution:
                 self.memo[(s1, s2)] = True
                 return True
             
+
+            # Case 2: Left matches Right, Right matches Left (Swapped at this level)
+            if self.isScramble(s1[:i], s2[n-i:]) and self.isScramble(s1[i:], s2[:n-i]):
+                self.memo[(s1, s2)] = True
+                return True
+        
+        self.memo[(s1, s2)] = False
+        return False
