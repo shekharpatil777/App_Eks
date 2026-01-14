@@ -17,3 +17,9 @@ class Solution:
                 nums1[k] = nums2[j]
                 j -= 1
             k -= 1
+        
+        # If nums2 still has elements left (nums1 elements are already in place)
+        while j >= 0:
+            nums1[k] = nums2[j]
+            j -= 1
+            k -= 1
