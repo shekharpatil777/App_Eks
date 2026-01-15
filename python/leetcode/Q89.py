@@ -7,3 +7,9 @@ class Solution:
             # The value to add to the mirrored part (2^i)
             mask = 1 << i
             
+            # Iterate through the current result in reverse order
+            # and add the mask to each element
+            for j in range(len(result) - 1, -1, -1):
+                result.append(result[j] | mask)
+                
+        return result
