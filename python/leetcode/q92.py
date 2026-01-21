@@ -17,4 +17,20 @@ class Solution:
         for _ in range(left - 1):
             prev = prev.next
 
+        # Reverse sublist
+        curr = prev.next
+        prev_sub = None
+        for _ in range(right - left + 1):
+            nxt = curr.next
+            curr.next = prev_sub
+            prev_sub = curr
+            curr = nxt
+
+        # Reconnect
+        prev.next.next = curr
+        prev.next = prev_sub
+
+        return dummy.next
+
+
 
