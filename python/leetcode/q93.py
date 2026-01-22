@@ -24,3 +24,8 @@ class Solution:
                 if (segment[0] == '0' and len(segment) > 1) or int(segment) > 255:
                     continue
 
+                
+                backtrack(start + length, path + [segment])
+
+        backtrack(0, [])
+        return res
