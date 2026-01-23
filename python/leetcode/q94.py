@@ -14,3 +14,8 @@ class Solution:
             curr = stack.pop()
             res.append(curr.val)
             
+            # We have visited the node and its left subtree. 
+            # Now, it's the right subtree's turn.
+            curr = curr.right
+            
+        return res
