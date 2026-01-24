@@ -24,3 +24,14 @@ class Solution:
                 left_subtrees = build(start, i - 1)
                 right_subtrees = build(i + 1, end)
                 
+                # 3. Connect the root 'i' with all combinations of left/right subtrees
+                for left in left_subtrees:
+                    for right in right_subtrees:
+                        root = TreeNode(i)
+                        root.left = left
+                        root.right = right
+                        all_trees.append(root)
+                        
+            return all_trees
+
+        return build(1, n)
