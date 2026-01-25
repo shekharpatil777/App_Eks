@@ -1,0 +1,19 @@
+Ansible is a configuration management & automation tool used to:
+
+Install software
+
+Configure servers
+
+Deploy applications
+
+Automate repetitive admin tasks
+
+👉 Used heavily in DevOps, Cloud, CI/CD, Infra Automation
+
+🔹 Why Ansible is Popular?
+
+✅ Agentless (no software needed on target servers)
+✅ Uses SSH (Linux) / WinRM (Windows)
+✅ Human-readable YAML
+✅ Easy to learn
+✅ Idempotent (safe to run multiple times)
