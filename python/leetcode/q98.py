@@ -9,3 +9,8 @@ class Solution:
             if not (low < node.val < high):
                 return False
             
+            # Recursively check subtrees with updated ranges
+            return (validate(node.left, low, node.val) and 
+                    validate(node.right, node.val, high))
+
+        return validate(root)
