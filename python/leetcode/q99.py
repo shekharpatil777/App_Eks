@@ -24,3 +24,8 @@ class Solution:
 
         # Swap the values of the two identified nodes
         self.first.val, self.second.val = self.second.val, self.first.val
+
+
+
+        # Swap the values of the two identified nodes
+        self.first.val, self.second.val = self.second.val, self.first.val
