@@ -27,4 +27,9 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             
+
+results.append(list(current_level))
+            # Flip the direction for the next level
+            left_to_right = not left_to_right
             
+        return results            
