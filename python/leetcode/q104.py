@@ -11,4 +11,5 @@ class Solution:
         if not root:
             return 0
         
-       
+ #Recursive Case: 1 (current node) + the max of its children
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))      
