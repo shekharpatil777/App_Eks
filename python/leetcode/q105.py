@@ -28,3 +28,10 @@ class Solution:
             # Left child: next element in preorder is the root
             root.left = helper(pre_start + 1, in_start, root_idx - 1)
             
+
+            # Right child: skip the root and all left subtree nodes in preorder
+            root.right = helper(pre_start + left_size + 1, root_idx + 1, in_end)
+            
+            return root
+            
+        return helper(0, 0, len(inorder) - 1)
