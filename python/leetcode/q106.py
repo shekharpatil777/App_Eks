@@ -21,3 +21,11 @@ class Solution:
             # Index of root in inorder
             index = idx_map[root_val]
             
+
+            # Build right subtree first
+            root.right = helper(index + 1, right)
+            root.left = helper(left, index - 1)
+            
+            return root
+        
+        return helper(0, len(inorder) - 1)
