@@ -34,3 +34,14 @@ class Solution:
             # build left subtree
             left = build(l, mid - 1)
             
+
+            # current node becomes root
+            root = TreeNode(self.curr.val)
+            root.left = left
+            self.curr = self.curr.next
+            
+            # build right subtree
+            root.right = build(mid + 1, r)
+            return root
+        
+        return build(0, n - 1)
