@@ -15,3 +15,6 @@ class Solution:
             return targetSum == root.val
         
 
+        # Check left or right subtree
+        return (self.hasPathSum(root.left, targetSum - root.val) or
+                self.hasPathSum(root.right, targetSum - root.val))
