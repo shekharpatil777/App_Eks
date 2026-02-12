@@ -16,3 +16,10 @@ class Solution:
                 # Continue searching left and right
                 dfs(node.left, current_path, current_sum - node.val)
                 dfs(node.right, current_path, current_sum - node.val)
+
+            
+            # Backtrack: remove the node before going back up the tree
+            current_path.pop()
+            
+        dfs(root, [], targetSum)
+        return results
