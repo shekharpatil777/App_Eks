@@ -6,3 +6,11 @@ class Solution:
         dp = [0] * (n + 1)
         dp[0] = 1  # empty t
         
+
+        for i in range(1, m + 1):
+            # iterate backwards to avoid overwriting
+            for j in range(n, 0, -1):
+                if s[i - 1] == t[j - 1]:
+                    dp[j] += dp[j - 1]
+        
+        return dp[n]
