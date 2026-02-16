@@ -22,3 +22,12 @@ class Solution:
                 current.left.next = current.right
                 
 
+                # Connect right -> next left (if exists)
+                if current.next:
+                    current.right.next = current.next.left
+                
+                current = current.next
+            
+            leftmost = leftmost.left
+        
+        return root
