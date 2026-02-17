@@ -28,4 +28,6 @@ class Solution:
                 
                 curr = curr.next   # Move within current level
             
-
+            curr = dummy.next      # Move to next level
+        
+        return root
