@@ -7,3 +7,12 @@ class Solution:
             # Create a row filled with 1s (size is i + 1)
             row = [1] * (i + 1)
             
+
+            # Fill the middle elements (from index 1 to i-1)
+            # This loop won't run for the first two rows
+            for j in range(1, i):
+                row[j] = triangle[i-1][j-1] + triangle[i-1][j]
+            
+            triangle.append(row)
+            
+        return triangle
