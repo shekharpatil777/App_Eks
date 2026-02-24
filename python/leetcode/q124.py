@@ -18,3 +18,10 @@ class Solution:
             # Update the global maximum if the current path is better
             self.max_sum = max(self.max_sum, current_path_sum)
 
+
+            # Return the max gain this node can contribute to its parent
+            # (We can only pick ONE branch to continue the path)
+            return node.val + max(left_gain, right_gain)
+
+        get_max_gain(root)
+        return self.max_sum
