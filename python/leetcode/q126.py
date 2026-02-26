@@ -28,3 +28,16 @@ class Solution:
             # Remove words we've already "visited" so we don't go backwards
             wordSet -= set(next_layer.keys())
 
+
+        # Backtracking/DFS to reconstruct paths from endWord to beginWord
+        res = []
+        def backtrack(word, path):
+            if word == beginWord:
+                res.append(path[::-1])
+                return
+            for p in parents[word]:
+                backtrack(p, path + [p])
+
+        if endWord in parents:
+            backtrack(endWord, [endWord])
+        return res
