@@ -28,3 +28,10 @@ class Solution:
             dfs(0, c)            # Top border
             dfs(rows - 1, c)     # Bottom border
 
+        # 2. Re-map the board
+        for r in range(rows):
+            for c in range(cols):
+                if board[r][c] == 'O':
+                    board[r][c] = 'X'  # Surrounded -> Captured
+                elif board[r][c] == 'S':
+                    board[r][c] = 'O'  # Safe -> Restored
