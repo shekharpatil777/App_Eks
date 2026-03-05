@@ -16,3 +16,11 @@ class Solution:
                 res.append(path[:])
                 return
 
+            for end in range(start, len(s)):
+                if is_palindrome(start, end):
+                    path.append(s[start:end+1])
+                    backtrack(end + 1)
+                    path.pop()
+
+        backtrack(0)
+        return res
