@@ -16,3 +16,10 @@ class Solution:
             copy = Node(curr_node.val)
             old_to_new[curr_node] = copy
             
+            # Recursively clone and add all neighbors
+            for neighbor in curr_node.neighbors:
+                copy.neighbors.append(dfs(neighbor))
+                
+            return copy
+        
+        return dfs(node)
