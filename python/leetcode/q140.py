@@ -22,3 +22,12 @@ class Solution:
                     # Get all valid sentences for the rest of the string
                     suffixes = backtrack(remaining_s[i:])
                     
+                    for suffix in suffixes:
+                        # Join prefix and suffix with a space
+                        sentence = (prefix + " " + suffix).strip()
+                        res.append(sentence)
+            
+            memo[remaining_s] = res
+            return res
+
+        return backtrack(s)
