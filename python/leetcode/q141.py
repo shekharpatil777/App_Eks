@@ -25,3 +25,8 @@ class Solution:
                         sentence = prefix + (" " + suffix if suffix else "")
                         res.append(sentence)
             
+
+            memo[remaining] = res
+            return res
+
+        return dfs(s)
