@@ -49,3 +49,4 @@ class LRUCache:
         node = Node(key, value)
         self._insert(node)
         self.cache[key] = node
+self.tail.prev
