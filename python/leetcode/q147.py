@@ -18,3 +18,6 @@ class Solution:
             curr = nxt
 
         return dummy.next
+
+
+#123
