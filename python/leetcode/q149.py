@@ -29,3 +29,10 @@ class Solution:
                     
                     slopes[(dx, dy)] += 1
             
+            max_points = 0
+            for count in slopes.values():
+                max_points = max(max_points, count)
+            
+            result = max(result, max_points + duplicate)
+        
+        return result
