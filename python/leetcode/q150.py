@@ -16,3 +16,9 @@ class Solution:
                     stack.append(left - right)
                 elif char == "*":
                     stack.append(left * right)
+                elif char == "/":
+                    # Python's // behaves differently with negative numbers
+                    # int(left / right) truncates toward zero as required
+                    stack.append(int(left / right))
+                    
+        return stack[0]
