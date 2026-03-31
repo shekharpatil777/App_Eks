@@ -19,3 +19,12 @@ class Solution:
                 if count == 0:
                     break
                 
+                # Add only the actual characters read to our queue
+                self.queue.extend(buf4[:count])
+            
+            # Move characters from our queue to the output buf
+            while self.queue and idx < n:
+                buf[idx] = self.queue.pop(0)
+                idx += 1
+                
+        return idx
