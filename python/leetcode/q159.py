@@ -24,3 +24,9 @@ class Solution:
                 del hashmap[s[del_idx]]
                 # Move left pointer to start a new valid window
                 left = del_idx + 1
+
+            
+            # Update the maximum length found so far
+            max_len = max(max_len, right - left)
+            
+        return max_len
