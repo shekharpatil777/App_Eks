@@ -19,3 +19,7 @@ class Solution:
                     # Case: Insert into s (or delete from t)
                     # s[i:] must match t[i+1:] because we "skipped" t[i]
                     return s[i:] == t[i + 1:]
+
+        # If no mismatch found in the loop, they are only one edit apart 
+        # if t has exactly one extra character at the end.
+        return ns + 1 == nt
