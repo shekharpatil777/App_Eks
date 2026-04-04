@@ -15,3 +15,10 @@ class Solution:
                 # If lengths are equal, it must be a replacement
                 if ns == nt:
                     return s[i+1:] == t[i+1:]
+
+                # If lengths are different, it must be an insertion into s (or deletion from t)
+                else:
+                    return s[i:] == t[i+1:]
+
+        # If no mismatch found, check if t has exactly one extra character at the end
+        return ns + 1 == nt
