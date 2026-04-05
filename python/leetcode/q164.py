@@ -27,3 +27,13 @@ class Solution:
         max_gap = 0
         prev_max = lo
         
+        for i in range(bucket_count):
+            # Skip empty buckets
+            if buckets_min[i] == float('inf'):
+                continue
+            
+            # Gap is between current bucket min and previous bucket max
+            max_gap = max(max_gap, buckets_min[i] - prev_max)
+            prev_max = buckets_max[i]
+            
+        return max_gap
