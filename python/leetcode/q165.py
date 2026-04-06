@@ -12,3 +12,11 @@ class Solution:
             # This handles cases like "1.1" vs "1.1.0"
             num1 = int(v1_split[i]) if i < n1 else 0
             num2 = int(v2_split[i]) if i < n2 else 0
+            
+            if num1 > num2:
+                return 1
+            elif num1 < num2:
+                return -1
+        
+        # If all segments are equal
+        return 0
