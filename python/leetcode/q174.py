@@ -15,3 +15,8 @@ class Solution:
             for c in range(cols - 1, -1, -1):
                 # Health needed to survive the next step
                 min_health_needed = min(dp[r + 1][c], dp[r][c + 1])
+                
+                # Health needed before entering current cell
+                dp[r][c] = max(1, min_health_needed - dungeon[r][c])
+        
+        return dp[0][0]
