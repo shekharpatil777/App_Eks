@@ -10,3 +10,6 @@ def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
     else:
         # 3. Take the second highest (index 1)
         res = unique_salaries.iloc[1]
+    
+    # Return as a DataFrame with the specific column name required
+    return pd.DataFrame({'SecondHighestSalary': [res]})
