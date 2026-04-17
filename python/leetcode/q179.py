@@ -13,3 +13,12 @@ class Solution:
                 return 1    # b should come first
             else:
                 return 0
+        
+        # Sort using custom comparator
+        nums.sort(key=cmp_to_key(compare))
+        
+        # Join result
+        result = ''.join(nums)
+        
+        # Edge case: leading zeros
+        return '0' if result[0] == '0' else result
