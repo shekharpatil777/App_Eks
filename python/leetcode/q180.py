@@ -8,3 +8,7 @@ def consecutive_numbers(logs: pd.DataFrame) -> pd.DataFrame:
     # Filter rows where current Num matches both the previous and the next
     # This identifies a sequence of at least 3
     is_consecutive = (logs['Num'] == logs['prev']) & (logs['Num'] == logs['next'])
+    
+    # Extract unique values and rename column to match requirement
+    result = logs.loc[is_consecutive, ['Num']].drop_duplicates()
+    return result.rename(columns={'Num': 'ConsecutiveNums'})
