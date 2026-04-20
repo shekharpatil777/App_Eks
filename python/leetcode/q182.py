@@ -10,3 +10,7 @@ def duplicate_emails(person: pd.DataFrame) -> pd.DataFrame:
     
     # Return unique values from the duplicates found to avoid triples/quadruples
     return duplicates[['email']].drop_duplicates()
+
+    # Method B: Using groupby and filter (Closer to SQL logic)
+    # df = person.groupby('email').filter(lambda x: len(x) > 1)
+    # return df[['email']].drop_duplicates()
