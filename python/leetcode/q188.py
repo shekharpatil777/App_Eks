@@ -18,3 +18,8 @@ class Solution:
             for j in range(1, k + 1):
                 # Max profit if we buy the stock for our j-th transaction
                 buy[j] = max(buy[j], sell[j-1] - price)
+                
+                # Max profit if we sell the stock for our j-th transaction
+                sell[j] = max(sell[j], buy[j] + price)
+                
+        return sell[k]
