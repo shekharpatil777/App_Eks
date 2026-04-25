@@ -10,3 +10,9 @@ def find_employees(employee: pd.DataFrame) -> pd.DataFrame:
         right_on='id', 
         suffixes=('_emp', '_mgr')
     )
+    
+    # 2. Filter rows where employee salary > manager salary
+    result_df = df[df['salary_emp'] > df['salary_mgr']]
+    
+    # 3. Rename the column to match the required output format
+    return result_df[['name_emp']].rename(columns={'name_emp': 'Employee'})
