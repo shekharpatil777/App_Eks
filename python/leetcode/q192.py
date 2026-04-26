@@ -12,3 +12,10 @@ def word_frequency():
     # Sort by frequency (descending)
     # word_counts.items() returns (word, count) tuples
     sorted_counts = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)
+    
+    # Print the result in the required format: "word frequency"
+    for word, count in sorted_counts:
+        print(f"{word} {count}")
+
+if __name__ == "__main__":
+    word_frequency()
