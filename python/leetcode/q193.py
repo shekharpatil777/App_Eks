@@ -19,3 +19,6 @@ def valid_phone_numbers():
                     print(line)
     except FileNotFoundError:
         pass
+
+if __name__ == "__main__":
+    valid_phone_numbers()
