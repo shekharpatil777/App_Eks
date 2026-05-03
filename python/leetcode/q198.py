@@ -10,3 +10,9 @@ class Solution:
         for num in nums:
             # Calculate max profit at current house
             current = max(prev1, num + prev2)
+            
+            # Shift variables forward for the next iteration
+            prev2 = prev1
+            prev1 = current
+            
+        return prev1
