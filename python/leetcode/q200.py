@@ -19,3 +19,13 @@ class Solution:
             dfs(r - 1, c)
             dfs(r, c + 1)
             dfs(r, c - 1)
+
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == '1':
+                    # We found a new island!
+                    island_count += 1
+                    # Sink the entire island using DFS
+                    dfs(r, c)
+                    
+        return island_count
