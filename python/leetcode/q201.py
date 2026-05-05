@@ -6,3 +6,6 @@ class Solution:
             left >>= 1
             right >>= 1
             shift += 1
+        
+        # Step 2: Shift back to the left to restore the trailing zeros
+        return left << shift
