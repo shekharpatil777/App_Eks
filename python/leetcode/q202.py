@@ -10,3 +10,11 @@ class Solution:
             n = self.get_next(n)
             
         return n == 1
+
+    def get_next(self, number: int) -> int:
+        total_sum = 0
+        while number > 0:
+            # Get the last digit and the remaining number
+            number, digit = divmod(number, 10)
+            total_sum += digit ** 2
+        return total_sum
