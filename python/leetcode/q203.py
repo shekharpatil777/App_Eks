@@ -9,3 +9,16 @@ class Solution:
         # Create a dummy node to act as the new head's predecessor
         dummy = ListNode(next=head)
         prev, curr = dummy, head
+        
+        while curr:
+            if curr.val == val:
+                # Disconnect the current node
+                prev.next = curr.next
+            else:
+                # Only move prev forward if we didn't delete a node
+                prev = curr
+            
+            # Move curr forward regardless
+            curr = curr.next
+            
+        return dummy.next
