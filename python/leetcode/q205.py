@@ -11,3 +11,13 @@ class Solution:
             # Check if charS is already mapped to something else
             if charS in mapST and mapST[charS] != charT:
                 return False
+            
+            # Check if charT is already mapped to something else
+            if charT in mapTS and mapTS[charT] != charS:
+                return False
+            
+            # Establish the mapping
+            mapST[charS] = charT
+            mapTS[charT] = charS
+            
+        return True
