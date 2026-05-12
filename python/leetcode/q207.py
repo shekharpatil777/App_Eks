@@ -18,3 +18,13 @@ class Solution:
         while queue:
             current = queue.popleft()
             completed_courses += 1
+            
+            # Decrease in-degree for all neighbor courses
+            for neighbor in adj[current]:
+                in_degree[neighbor] -= 1
+                # If neighbor has no more prerequisites, add to queue
+                if in_degree[neighbor] == 0:
+                    queue.append(neighbor)
+                    
+        # 4. If we finished all courses, there's no cycle
+        return completed_courses == numCourses
