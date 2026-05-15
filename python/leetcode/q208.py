@@ -37,4 +37,6 @@ class Trie:
         for char in prefix:
             if char not in current.children:
                 return False
-            current = 
+            current = current.children[char]
+        # If we successfully traced the prefix, it exists
+        return True
