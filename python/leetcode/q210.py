@@ -30,3 +30,6 @@ class Solution:
 
                 if indegree[nei] == 0:
                     q.append(nei)
+
+        # If all courses processed, return order
+        return order if len(order) == numCourses else []
