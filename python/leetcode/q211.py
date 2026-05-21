@@ -34,3 +34,10 @@ class WordDictionary:
                         return True
                 return False
 )
+
+            if ch not in node.children:
+                return False
+
+            return dfs(i + 1, node.children[ch])
+
+        return dfs(0, self.root
