@@ -45,3 +45,13 @@ class Solution:
                     dfs(nr, nc, nxt)
 
             board[r][c] = ch
+
+            # prune trie
+            if not nxt.children:
+                del node.children[ch]
+
+        for r in range(rows):
+            for c in range(cols):
+                dfs(r, c, root)
+
+        return result
