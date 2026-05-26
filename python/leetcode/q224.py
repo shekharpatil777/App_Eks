@@ -32,3 +32,8 @@ class Solution:
 
                 prev_sign = stack.pop()
                 prev_result = stack.pop()
+
+                result = prev_result + prev_sign * result
+
+        result += sign * number
+        return result
