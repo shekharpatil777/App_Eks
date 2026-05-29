@@ -13,3 +13,10 @@ class Solution:
         
         # Pythonic swap: invert the left and right children
         root.left, root.right = root.right, root.left
+        
+        # Recursively call the function on the children
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        
+        # Return the root of the inverted tree
+        return root
