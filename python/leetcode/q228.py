@@ -16,3 +16,9 @@ class Solution:
                 else:
                     # Otherwise, it's a range
                     ranges.append(f"{start}->{nums[i]}")
+
+                # If there are more elements, update the start for the next range
+                if i < len(nums) - 1:
+                    start = nums[i + 1]
+
+        return ranges
