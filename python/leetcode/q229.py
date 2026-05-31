@@ -22,3 +22,8 @@ class Solution:
 
         if nums.count(cand1) > len(nums) // 3:
             result.append(cand1)
+
+        if cand2 != cand1 and nums.count(cand2) > len(nums) // 3:
+            result.append(cand2)
+
+        return result
