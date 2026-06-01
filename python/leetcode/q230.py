@@ -19,3 +19,10 @@ class Solution:
             # Process the node
             curr = stack.pop()
             k -= 1
+            
+            # If we've hit the k-th element, return its value
+            if k == 0:
+                return curr.val
+            
+            # Move to the right subtree
+            curr = curr.right
