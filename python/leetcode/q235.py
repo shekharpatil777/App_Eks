@@ -16,3 +16,6 @@ class Solution:
             # If both p and q are less than parent, LCA is in the left subtree
             elif p.val < current.val and q.val < current.val:
                 current = current.left
+            # We found the split point, or current is equal to either p or q
+            else:
+                return current
