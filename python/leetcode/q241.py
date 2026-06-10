@@ -21,3 +21,10 @@ class Solution:
                                 result.append(l - r)
                             else:
                                 result.append(l * r)
+
+            if not result:
+                result.append(int(expr))
+
+            return result
+
+        return solve(expression)
