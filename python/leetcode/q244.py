@@ -15,3 +15,13 @@ class WordDistance:
 
         i = j = 0
         ans = float('inf')
+
+        while i < len(list1) and j < len(list2):
+            ans = min(ans, abs(list1[i] - list2[j]))
+
+            if list1[i] < list2[j]:
+                i += 1
+            else:
+                j += 1
+
+        return ans
