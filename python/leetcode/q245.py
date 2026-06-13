@@ -18,3 +18,8 @@ class Solution:
                     idx1 = i
                 elif word == word2:
                     idx2 = i
+
+                if idx1 != -1 and idx2 != -1:
+                    ans = min(ans, abs(idx1 - idx2))
+
+        return ans
