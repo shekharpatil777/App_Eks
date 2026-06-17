@@ -12,3 +12,12 @@ class Solution:
             for i in range(1, len(s)):
                 diff = (ord(s[i]) - ord(s[i - 1])) % 26
                 key.append(diff)
+            
+            return tuple(key)
+
+        groups = defaultdict(list)
+
+        for s in strings:
+            groups[get_key(s)].append(s)
+
+        return list(groups.values())
