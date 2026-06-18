@@ -21,3 +21,12 @@ class Solution:
 
             if node.left and node.left.val != node.val:
                 return False
+
+            if node.right and node.right.val != node.val:
+                return False
+
+            self.count += 1
+            return True
+
+        dfs(root)
+        return self.count
