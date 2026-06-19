@@ -10,3 +10,12 @@ class Vector2D:
         while self.row < len(self.vec) and self.col >= len(self.vec[self.row]):
             self.row += 1
             self.col = 0
+
+    def next(self):
+        val = self.vec[self.row][self.col]
+        self.col += 1
+        self._advance()
+        return val
+
+    def hasNext(self):
+        return self.row < len(self.vec)
