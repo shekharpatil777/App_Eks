@@ -6,3 +6,10 @@ class Solution:
         for num in preorder:
             if num < lower_bound:
                 return False
+
+            while stack and num > stack[-1]:
+                lower_bound = stack.pop()
+
+            stack.append(num)
+
+        return True
