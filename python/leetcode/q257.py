@@ -18,3 +18,14 @@ class Solution:
                 path += "->" + str(node.val)
             else:
                 path = str(node.val)
+
+            # if leaf node → store result
+            if not node.left and not node.right:
+                res.append(path)
+                return
+
+            dfs(node.left, path)
+            dfs(node.right, path)
+
+        dfs(root, "")
+        return res
