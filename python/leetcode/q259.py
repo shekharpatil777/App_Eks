@@ -9,3 +9,11 @@ class Solution:
 
             while left < right:
                 s = nums[i] + nums[left] + nums[right]
+
+                if s < target:
+                    count += right - left
+                    left += 1
+                else:
+                    right -= 1
+
+        return count
