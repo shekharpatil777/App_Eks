@@ -11,3 +11,16 @@ class Solution:
             graph[v].append(u)
 
         visited = set()
+
+        def dfs(node, parent):
+            visited.add(node)
+            for nei in graph[node]:
+                if nei == parent:
+                    continue
+                if nei in visited:
+                    return False
+                if not dfs(nei, node):
+                    return False
+            return True
+
+        return dfs(0, -1) and len(visited) == n
