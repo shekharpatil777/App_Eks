@@ -21,3 +21,12 @@ class Solution:
                 
         inorder(root)
 
+        
+        # Shrink the deque to exactly k elements using a sliding window
+        while len(dq) > k:
+            if abs(dq[0] - target) > abs(dq[-1] - target):
+                dq.popleft()
+            else:
+                dq.pop()
+                
+        return list(dq)
