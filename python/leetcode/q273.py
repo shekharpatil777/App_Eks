@@ -21,3 +21,11 @@ class Solution:
                 return self.tens[n // 10] + " " + helper(n % 10)
             else:
                 return self.less_than_20[n // 100] + " Hundred " + helper(n % 100)
+
+        res = ""
+        for i in range(len(self.thousands)):
+            if num % 1000 != 0:
+                res = helper(num % 1000) + self.thousands[i] + " " + res
+            num //= 1000
+            
+        return res.strip()
