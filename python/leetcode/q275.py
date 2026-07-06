@@ -10,3 +10,11 @@ class Solution:
             mid = (left + right) // 2
 
             papers = n - mid  # papers with citations >= citations[mid]
+
+            if citations[mid] >= papers:
+                ans = papers
+                right = mid - 1
+            else:
+                left = mid + 1
+
+        return ans
