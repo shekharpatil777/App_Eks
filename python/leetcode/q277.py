@@ -14,3 +14,10 @@ class Solution:
         for i in range(n):
             if i == candidate:
                 continue
+
+            # Celebrity should know nobody
+            # Everyone should know celebrity
+            if knows(candidate, i) or not knows(i, candidate):
+                return -1
+
+        return candidate
