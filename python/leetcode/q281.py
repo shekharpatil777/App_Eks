@@ -17,3 +17,16 @@ class ZigzagIterator:
         # Get the vector at the front of the queue
         vec, idx = self.queue.popleft()
         val = vec[idx]
+        
+        # If the vector still has remaining elements, put it back at the end
+        if idx + 1 < len(vec):
+            self.queue.append((vec, idx + 1))
+            
+        return val
+
+    def hasNext(self) -> bool:
+        return len(self.queue) > 0
+
+# Your ZigzagIterator object will be instantiated and called as such:
+# i, v = ZigzagIterator(v1, v2), []
+# while i.hasNext(): v.append(i.next())
