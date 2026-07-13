@@ -49,3 +49,16 @@ class Solution:
                         value - current,
                         -current
                     )
+
+                    # Multiplication
+                    multiplied_value = value - previous + previous * current
+
+                    backtrack(
+                        end + 1,
+                        expression + "*" + current_str,
+                        multiplied_value,
+                        previous * current
+                    )
+
+        backtrack(0, "", 0, 0)
+        return result
