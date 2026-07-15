@@ -29,3 +29,11 @@ class Solution:
             for dr, dc in directions:
                 new_row = row + dr
                 new_col = col + dc
+
+                if (
+                    0 <= new_row < rows
+                    and 0 <= new_col < cols
+                    and rooms[new_row][new_col] == 2147483647
+                ):
+                    rooms[new_row][new_col] = rooms[row][col] + 1
+                    queue.append((new_row, new_col))
