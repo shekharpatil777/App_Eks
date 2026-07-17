@@ -29,3 +29,16 @@ class Solution:
                 if board[row][col] == 1:
                     if live_neighbors < 2 or live_neighbors > 3:
                         board[row][col] = -1
+
+                # Dead cell becomes live
+                elif board[row][col] == 0:
+                    if live_neighbors == 3:
+                        board[row][col] = 2
+
+        # Convert temporary states to final states
+        for row in range(rows):
+            for col in range(cols):
+                if board[row][col] == -1:
+                    board[row][col] = 0
+                elif board[row][col] == 2:
+                    board[row][col] = 1
