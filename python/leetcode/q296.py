@@ -21,3 +21,15 @@ class Solution:
                     cols.append(c)
 
         return self.get_distance(rows) + self.get_distance(cols)
+
+    def get_distance(self, positions: List[int]) -> int:
+        left = 0
+        right = len(positions) - 1
+        distance = 0
+
+        while left < right:
+            distance += positions[right] - positions[left]
+            left += 1
+            right -= 1
+
+        return distance
