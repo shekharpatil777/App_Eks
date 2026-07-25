@@ -28,4 +28,9 @@ class Solution:
             # Recurse down to left and right children
             dfs(node.left, node.val, current_len)
             dfs(node.right, node.val, current_len)
-
+            
+        # Start DFS with the root node. Its parent value is dummy (root.val - 1) 
+        # so that the root itself initializes the sequence length to 1.
+        dfs(root, root.val - 1, 0)
+        
+        return self.max_len
