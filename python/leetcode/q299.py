@@ -11,3 +11,10 @@ class Solution:
                 secret_count[int(s)] += 1
                 guess_count[int(g)] += 1
 "
+
+        cows = sum(
+            min(secret_count[digit], guess_count[digit])
+            for digit in range(10)
+        )
+
+        return f"{bulls}A{cows}B
