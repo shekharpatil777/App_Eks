@@ -20,3 +20,12 @@ class Solution:
             valid = [string for string in level if is_valid(string)]
             if valid:
                 return valid
+
+            next_level = set()
+            for string in level:
+                for i in range(len(string)):
+                    if string[i] not in "()":
+                        continue
+                    next_level.add(string[:i] + string[i + 1:])
+
+            level = next_level
