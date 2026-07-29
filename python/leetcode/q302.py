@@ -74,3 +74,27 @@ class Solution:
             elif char == ")":
                 # A closing bracket can only be kept if
                 # there is an unmatched opening bracket
+                if left_count > right_count:
+                    backtrack(
+                        index + 1,
+                        left_count,
+                        right_count + 1,
+                        left_rem,
+                        right_rem,
+                        path,
+                    )
+
+            else:
+                backtrack(
+                    index + 1,
+                    left_count,
+                    right_count,
+                    left_rem,
+                    right_rem,
+                    path,
+                )
+
+            path.pop()
+
+        backtrack(0, 0, 0, remove_left, remove_right, [])
+        return list(result)
