@@ -63,3 +63,14 @@ class Solution:
                 new_row = row + dr
                 new_col = col + dc
                 neighbour = (new_row, new_col)
+
+                if (
+                    0 <= new_row < m
+                    and 0 <= new_col < n
+                    and neighbour in parent
+                ):
+                    union(cell, neighbour)
+
+            answer.append(islands)
+
+        return answer
