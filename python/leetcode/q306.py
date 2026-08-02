@@ -26,3 +26,11 @@ class Solution:
                 # Second number cannot have a leading zero
                 if num[i] == "0" and j - i > 1:
                     break
+
+                first = int(num[:i])
+                second = int(num[i:j])
+
+                if is_valid(first, second, j):
+                    return True
+
+        return False
