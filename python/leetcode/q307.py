@@ -32,3 +32,19 @@ class NumArray:
         right += self.n
 
         total = 0
+
+        while left <= right:
+            # Left is a right child
+            if left % 2 == 1:
+                total += self.tree[left]
+                left += 1
+
+            # Right is a left child
+            if right % 2 == 0:
+                total += self.tree[right]
+                right -= 1
+
+            left //= 2
+            right //= 2
+
+        return total
