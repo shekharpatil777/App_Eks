@@ -17,3 +17,11 @@ class Solution:
 
             # Buy today or continue holding
             hold = max(previous_hold, previous_rest - price)
+
+            # Sell today
+            sold = previous_hold + price
+
+            # Continue resting or enter cooldown after yesterday's sale
+            rest = max(previous_rest, previous_sold)
+
+        return max(sold, rest)
