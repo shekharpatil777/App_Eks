@@ -30,3 +30,14 @@ class Solution:
         while remaining_nodes > 2:
             leaf_count = len(leaves)
             remaining_nodes -= leaf_count
+
+            for _ in range(leaf_count):
+                leaf = leaves.popleft()
+
+                for neighbour in graph[leaf]:
+                    degree[neighbour] -= 1
+
+                    if degree[neighbour] == 1:
+                        leaves.append(neighbour)
+
+        return list(leaves)
