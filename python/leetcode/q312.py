@@ -1,0 +1,25 @@
+from typing import List
+
+
+class Solution:
+    def maxCoins(self, nums: List[int]) -> int:
+        # Add virtual balloons with value 1
+        nums = [1] + nums + [1]
+        n = len(nums)
+
+        # dp[left][right] =
+        # maximum coins from bursting balloons between left and right
+        dp = [[0] * n for _ in range(n)]
+
+        # length is the distance between boundaries
+        for length in range(2, n):
+            for left in range(n - length):
+                right = left + length
+
+                # Try every balloon as the LAST balloon to burst
+                for k in range(left + 1, right):
+                    coins = (
+                        nums[left] * nums[k] * nums[right]
+                        + dp[left][k]
+                        + dp[k][right]
+                    )
