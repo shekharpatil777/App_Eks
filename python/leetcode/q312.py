@@ -23,3 +23,10 @@ class Solution:
                         + dp[left][k]
                         + dp[k][right]
                     )
+
+                    dp[left][right] = max(
+                        dp[left][right],
+                        coins
+                    )
+
+        return dp[0][n - 1]
