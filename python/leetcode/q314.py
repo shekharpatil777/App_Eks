@@ -12,3 +12,12 @@ class Solution:
         for i in range(1, n):
             # smallest candidate becomes next ugly number
             ugly[i] = min(next_val)
+
+            # Move every pointer that generated this value
+            # This handles duplicate candidates.
+            for j in range(k):
+                if next_val[j] == ugly[i]:
+                    idx[j] += 1
+                    next_val[j] = primes[j] * ugly[idx[j]]
+
+        return ugly[n - 1]
