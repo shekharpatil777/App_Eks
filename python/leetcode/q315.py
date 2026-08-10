@@ -39,3 +39,9 @@ class Solution:
             while j < right:
                 temp.append(arr[j])
                 j += 1
+
+            arr[left:right] = temp
+
+        merge_sort(0, n)
+
+        return result
