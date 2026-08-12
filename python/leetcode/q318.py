@@ -11,3 +11,11 @@ class Solution:
             masks.append(mask)
 
         ans = 0
+
+        for i in range(len(words)):
+            for j in range(i + 1, len(words)):
+                # No common character
+                if masks[i] & masks[j] == 0:
+                    ans = max(ans, len(words[i]) * len(words[j]))
+
+        return ans
