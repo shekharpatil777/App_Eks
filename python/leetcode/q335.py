@@ -19,3 +19,9 @@ class Solution:
             # Current line crosses the line 5 steps before
             if i >= 5 and \
                distance[i - 2] >= distance[i - 4] and \
+               distance[i] + distance[i - 4] >= distance[i - 2] and \
+               distance[i - 1] <= distance[i - 3] and \
+               distance[i - 1] + distance[i - 5] >= distance[i - 3]:
+                return True
+
+        return False
