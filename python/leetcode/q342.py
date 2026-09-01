@@ -9,3 +9,8 @@ class NestedIterator:
     def hasNext(self) -> bool:
         self._flatten()
         return len(self.stack) > 0
+
+    def _flatten(self):
+        while self.stack and not self.stack[-1].isInteger():
+            nested = self.stack.pop().getList()
+            self.stack.extend(nested[::-1])
