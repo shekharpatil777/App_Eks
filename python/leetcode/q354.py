@@ -13,3 +13,12 @@ class Solution:
 
     # Longest Increasing Subsequence on heights
     lis = []
+
+    for _, h in envelopes:
+      idx = bisect.bisect_left(lis, h)
+      if idx < len(lis):
+        lis[idx] = h
+      else:
+        lis.append(h)
+
+    return len(lis)
