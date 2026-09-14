@@ -42,3 +42,10 @@ class Twitter:
                 heapq.heappush(max_heap, (-time, next_tweet_id, followee_id, next_idx - 1))
 
         return res
+
+    def follow(self, followerId: int, followeeId: int) -> None:
+        if followerId != followeeId:
+            self.follow_map[followerId].add(followeeId)
+
+    def unfollow(self, followerId: int, followeeId: int) -> None:
+        self.follow_map[followerId].discard(followeeId)
