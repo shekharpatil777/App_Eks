@@ -37,3 +37,10 @@ class Twitter:
             feed.append(tweet[1])
             
         return feed
+
+    def follow(self, followerId: int, followeeId: int) -> None:
+        if followerId != followeeId:
+            self.following[followerId].add(followeeId)
+
+    def unfollow(self, followerId: int, followeeId: int) -> None:
+        self.following[followerId].discard(followeeId)
