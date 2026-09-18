@@ -32,3 +32,14 @@ class Solution:
             while left <= right:
                 l = f(nums[left])
                 r = f(nums[right])
+
+                if l < r:
+                    ans[pos] = l
+                    left += 1
+                else:
+                    ans[pos] = r
+                    right -= 1
+
+                pos += 1
+
+        return ans
