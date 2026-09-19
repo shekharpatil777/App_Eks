@@ -27,3 +27,18 @@ class Solution:
         else:
             # Smallest values come from the ends
             pos = 0
+
+            while left <= right:
+                l = f(nums[left])
+                r = f(nums[right])
+
+                if l < r:
+                    ans[pos] = l
+                    left += 1
+                else:
+                    ans[pos] = r
+                    right -= 1
+
+                pos += 1
+
+        return ans
