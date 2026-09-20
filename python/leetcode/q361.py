@@ -23,3 +23,13 @@ class Solution:
                 # Recalculate enemies in this column segment
                 if i == 0 or grid[i - 1][j] == 'W':
                     col_hits[j] = 0
+                    k = i
+                    while k < m and grid[k][j] != 'W':
+                        if grid[k][j] == 'E':
+                            col_hits[j] += 1
+                        k += 1
+
+                if grid[i][j] == '0':
+                    ans = max(ans, row_hits + col_hits[j])
+
+        return ans
