@@ -32,3 +32,10 @@ class Solution:
               b - min(b, x - a),
           ),  # Pour jug 2 -> jug 1
       }
+
+      for state in next_states:
+        if state not in visited:
+          visited.add(state)
+          queue.append(state)
+
+    return False
