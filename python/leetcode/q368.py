@@ -15,3 +15,15 @@ class Solution:
                     if dp[j] + 1 > dp[i]:
                         dp[i] = dp[j] + 1
                         prev[i] = j
+
+            if dp[i] > max_len:
+                max_len = dp[i]
+                max_idx = i
+
+        result = []
+
+        while max_idx != -1:
+            result.append(nums[max_idx])
+            max_idx = prev[max_idx]
+
+        return result[::-1]
