@@ -9,3 +9,7 @@ class Solution:
             carry = ((a & b) << 1) & mask
             a = (a ^ b) & mask
             b = carry
+
+        # If a exceeds the maximum positive 32-bit integer,
+        # convert it to its negative two's complement value
+        return a if a <= max_int else ~(a ^ mask)
