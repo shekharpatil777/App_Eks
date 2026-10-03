@@ -6,3 +6,9 @@ class Solution:
             for left in range(1, n - length + 2):
                 right = left + length - 1
                 dp[left][right] = float('inf')
+
+                for k in range(left, right):
+                    cost = k + max(dp[left][k - 1], dp[k + 1][right])
+                    dp[left][right] = min(dp[left][right], cost)
+
+        return dp[1][n]
