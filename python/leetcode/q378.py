@@ -11,3 +11,17 @@ class Solution:
             count = 0
             row = n - 1
             col = 0
+
+            while row >= 0 and col < n:
+                if matrix[row][col] <= mid:
+                    count += row + 1
+                    col += 1
+                else:
+                    row -= 1
+
+            if count < k:
+                low = mid + 1
+            else:
+                high = mid
+
+        return low
