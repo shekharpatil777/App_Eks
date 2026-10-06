@@ -16,3 +16,8 @@ class PhoneDirectory:
 
     def check(self, number: int) -> bool:
         return self.is_available[number]
+
+    def release(self, number: int) -> None:
+        if not self.is_available[number]:
+            self.is_available[number] = True
+            self.queue.append(number)
