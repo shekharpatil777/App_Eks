@@ -31,3 +31,13 @@ class RandomizedSet:
         # Move the last element to the index of the element being removed
         self.values[idx_to_remove] = last_val
         self.val_to_index[last_val] = idx_to_remove
+        
+        # Pop the last element from the array and delete the target from the dict
+        self.values.pop()
+        del self.val_to_index[val]
+        
+        return True
+
+    def getRandom(self) -> int:
+        """Get a random element from the current set of elements."""
+        return random.choice(self.values)
