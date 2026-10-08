@@ -36,3 +36,12 @@ class RandomizedCollection:
         # 3. Update the index set for the last value
         self.val_to_indices[last_val].add(idx_to_remove)
         self.val_to_indices[last_val].discard(len(self.values) - 1)
+        
+        # 4. Remove the last element from the array
+        self.values.pop()
+        
+        return True
+
+    def getRandom(self) -> int:
+        """Get a random element from the current collection of elements."""
+        return random.choice(self.values)
