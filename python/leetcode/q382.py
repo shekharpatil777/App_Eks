@@ -12,3 +12,10 @@ class Solution:
 
         while current:
             count += 1
+
+            if random.randint(1, count) == 1:
+                result = current.val
+
+            current = current.next
+
+        return result
