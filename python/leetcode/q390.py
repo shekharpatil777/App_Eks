@@ -1,0 +1,11 @@
+class Solution:
+    def lastRemaining(self, n: int) -> int:
+        head = 1
+        step = 1
+        remaining = n
+        left_to_right = True
+
+        while remaining > 1:
+            # Head shifts if moving left-to-right OR if moving right-to-left with an odd count
+            if left_to_right or remaining % 2 == 1:
+                head += step
