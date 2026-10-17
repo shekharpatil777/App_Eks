@@ -9,3 +9,9 @@ class Solution:
             # Head shifts if moving left-to-right OR if moving right-to-left with an odd count
             if left_to_right or remaining % 2 == 1:
                 head += step
+            
+            remaining //= 2
+            step *= 2
+            left_to_right = not left_to_right
+
+        return head
