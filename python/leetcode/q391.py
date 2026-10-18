@@ -1,4 +1,4 @@
-from typing import List
+wwwfrom typing import List
 
 class Solution:
     def isRectangleCover(self, rectangles: List[List[int]]) -> bool:
@@ -27,3 +27,13 @@ class Solution:
         expected_area = (max_x - min_x) * (max_y - min_y)
         if total_area != expected_area:
             return False
+
+        # 2. Exactly the 4 corners of the bounding box must remain with count 1
+        expected_corners = {
+            (min_x, min_y),
+            (min_x, max_y),
+            (max_x, min_y),
+            (max_x, max_y),
+        }
+
+        return corners == expected_corners
