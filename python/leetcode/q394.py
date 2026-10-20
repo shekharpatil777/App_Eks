@@ -16,3 +16,8 @@ class Solution:
             elif char == ']':
                 # Pop previous context and multiply the inner string
                 prev_str, repeat_count = stack.pop()
+                curr_str = prev_str + repeat_count * curr_str
+            else:
+                curr_str += char
+
+        return curr_str
