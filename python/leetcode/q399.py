@@ -31,4 +31,10 @@ class Solution:
 
                 for neighbor, weight in graph[curr_node].items():
                     if neighbor not in visited:
- 
+                        visited.add(neighbor)
+                        queue.append((neighbor, curr_prod * weight))
+
+            return -1.0
+
+        # Step 2: Process each query
+        return [bfs(q[0], q[1]) for q in queries]
