@@ -12,3 +12,8 @@ class Solution:
         # If k is still greater than 0, truncate from the end
         if k > 0:
             stack = stack[:-k]
+            
+        # Strip leading zeros and handle the empty string edge case
+        result = "".join(stack).lstrip("0")
+        
+        return result if result else "0"
