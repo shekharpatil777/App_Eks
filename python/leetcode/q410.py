@@ -25,3 +25,11 @@ class Solution:
         while low <= high:
             mid = (low + high) // 2
 
+            
+            if canSplit(mid):
+                ans = mid       # mid is a valid largest sum, try to find a smaller maximum
+                high = mid - 1
+            else:
+                low = mid + 1   # mid is too small, increase the allowed maximum sum
+                
+        return ans
