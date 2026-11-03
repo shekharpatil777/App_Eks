@@ -39,3 +39,15 @@ class Solution:
             count = 0
             for i in range(n):
                 if (mask >> (n - 1 - i)) & 1:
+                    if count > 0:
+                        res.append(str(count))
+                        count = 0
+                    res.append(target[i])
+                else:
+                    count += 1
+            if count > 0:
+                res.append(str(count))
+            return "".join(res)
+
+        # Try masks by abbreviation length (from 1 to n)
+        # A
