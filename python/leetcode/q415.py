@@ -37,3 +37,13 @@ class Solution:
                 counts[left[i][0]] += right_count
                 merged.append(left[i])
                 i += 1
+
+            # Drain remaining right elements
+            while j < len(right):
+                merged.append(right[j])
+                j += 1
+
+            return merged
+
+        merge_sort(indexed_nums)
+        return counts
