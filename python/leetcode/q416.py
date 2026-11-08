@@ -17,3 +17,13 @@ class Solution:
       # If an individual number is larger than the target, return False early
       if num > target:
         return False
+
+      # Traverse backwards so that num is used at most once
+      for j in range(target, num - 1, -1):
+        dp[j] = dp[j] or dp[j - num]
+
+      # Early exit if target is already reachable
+      if dp[target]:
+        return True
+
+    return dp[target]
