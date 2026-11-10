@@ -11,3 +11,11 @@ class Solution:
                 if board[r][c] == 'X':
                     # Skip if it is part of a battleship extending from above
                     if r > 0 and board[r - 1][c] == 'X':
+                        continue
+                    # Skip if it is part of a battleship extending from the left
+                    if c > 0 and board[r][c - 1] == 'X':
+                        continue
+                    
+                    count += 1
+                    
+        return count
