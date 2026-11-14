@@ -14,3 +14,11 @@ class Solution:
 
             # Greedily assume the i-th bit in max_xor can be 1
             candidate = max_xor | (1 << i)
+
+            # Property: If a ^ b = candidate, then a ^ candidate = b
+            for prefix in prefixes:
+                if (prefix ^ candidate) in prefixes:
+                    max_xor = candidate
+                    break
+
+        return max_xor
