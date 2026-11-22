@@ -30,3 +30,9 @@ class Solution:
                 current_square.append(candidate)
                 backtrack(step + 1, current_square)
                 current_square.pop()
+        
+        # Start backtracking from every word as the first row
+        for word in words:
+            backtrack(1, [word])
+            
+        return results
