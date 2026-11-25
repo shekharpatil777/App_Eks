@@ -23,3 +23,12 @@ class Solution:
                 child_tail.next = curr.next
                 if curr.next:
                     curr.next.prev = child_tail
+                
+                # Reconnect curr with curr.child
+                curr.next = curr.child
+                curr.child.prev = curr
+                curr.child = None
+                
+            curr = curr.next
+            
+        return head
